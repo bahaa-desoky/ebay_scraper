@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'scraper/table.css' %}">
+    <title>Scraper</title>
+</head>
+<body>
+    <div class="limiter">
+    <div class="container-table100">
+    <div class="wrap-table100">
+    <div class="table100">
+
+    <table style="display: inline-block; float: left">
+        <tr>
+            <th>Item Title</th>
+            <th>Item Price </th>
+            <th>Shipping Cost</th>
+        </tr>
+        <!-- this for loop separates each set of title, price, etc.       -->
+        {% for item in items.main%}
+            <tr>
+                <!-- this for loop separates each each element (title, price, etc.) into a cell       -->
+                {% for data in item%}
+                <td>{{data|truncatechars:65}}</td>
+                {% endfor %}
+        {% endfor %}
+            </tr>
+    </table>
+
+    <table id= "links" style="display: inline-block;">
+        <tr>
+            <th>Links</th>
+        </tr>
+        {% for links in items.links %}
+            <tr>
+                <!-- this for loop separates each each element (title, price, etc.) into a cell       -->
+                <td ><a href="{{links}}">{{links|truncatechars:30}}</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

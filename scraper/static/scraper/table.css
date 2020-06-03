@@ -1,0 +1,116 @@
+@font-face { font-family: Lato-Regular; src: url('lato/Lato-Regular.ttf'); }
+@font-face { font-family: Lato-Light; src: url('lato/Lato-Light.ttf'); }
+
+/*padding and margins*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/*surrounding the table*/
+.container-table100 {
+  width: 100%;
+  min-height: 100vh;
+  background: #89253e;
+  background: -webkit-linear-gradient(45deg, #89253e  , #3a6186);
+  background: -o-linear-gradient(45deg, #89253e, #3a6186);
+  background: -moz-linear-gradient(45deg, #bf3456, #3a6186);
+  background: linear-gradient(45deg, #bf3456, #3a6186);
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 33px 30px;
+}
+
+/*main table properties*/
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-radius: 10px 0 0 10px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+}
+
+/*this is to make the border curves seem as though the links are a continuation of the main table*/
+#links{
+  border-radius: 0 10px 10px 0;
+}
+
+table * {
+  position: relative;
+}
+
+table td, th {
+  padding: 8px;
+}
+
+/*background for every odd row*/
+table tr:nth-child(odd){
+      background: white;
+}
+
+table tr:hover {background-color: #ddd;}
+
+/*header colors and fonts*/
+table th {
+  height: 40px;
+  background: #3c466b;
+  color: #ffffff;
+  font-family: Lato-Light ;
+}
+
+/*height of row*/
+table tbody tr {
+  height: 50px;
+}
+
+/*text alignment*/
+table td, table th {
+  text-align: left;
+}
+table td.l, table th.l {
+  text-align: right;
+}
+table td.c, table th.c {
+  text-align: center;
+}
+table td.r, table th.r {
+  text-align: center;
+}
+
+/*every other row highlight*/
+tbody tr:nth-child(even) {
+  background-color: #f5f5f5;
+}
+
+/* table text */
+tbody tr {
+  font-family: Lato-Regular;
+  font-size: 15px;
+  color: #808080;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+/*text highlight on hover*/
+tbody tr:hover {
+  color: #555555;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+
+
