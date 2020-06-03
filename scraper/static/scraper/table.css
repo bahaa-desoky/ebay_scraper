@@ -34,11 +34,32 @@
   padding: 33px 30px;
 }
 
+/*input styling*/
 form input{
   border-radius: 10px;
   width: 900px;
-  height: 50px;
+  height: 35px;
   border: none;
+  outline: none;
+  text-indent: 10px;
+  font-family: Lato-Regular;
+}
+
+/*submit button styling*/
+.submit_search{
+  border-radius: 10px;
+  border: none;
+  background-color: #7269b1;
+  height: 35px;
+  width: 100px;
+  color: white;
+  font-family: Lato-Regular;
+  transition-duration: 0.4s;
+}
+
+.submit_search:hover {
+  background-color: white;
+  color: black;
 }
 
 /*main table properties*/

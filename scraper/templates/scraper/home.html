@@ -14,8 +14,10 @@
     <form action="{% url 'scraper-home' %}" method="POST">
 	    	{% csrf_token %}
             <input class="inp" type="text" name="nkw" placeholder="Enter item to scrape...">
-		    <button >Submit</button>&ensp;
+		    <button class="submit_search">Search</button>
     </form>
+
+    <div><br></div>
 
     <table class="table">
         <tr>
