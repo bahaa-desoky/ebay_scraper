@@ -34,6 +34,11 @@
   padding: 33px 30px;
 }
 
+input{
+  border-radius: 10px;
+  width: 900px;
+}
+
 /*main table properties*/
 table {
   border-spacing: 0;
