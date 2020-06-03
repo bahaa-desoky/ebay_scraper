@@ -38,15 +38,11 @@
 table {
   border-spacing: 0;
   border-collapse: collapse;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   overflow: hidden;
   margin: 0 auto;
   position: relative;
-}
-
-/*this is to make the border curves seem as though the links are a continuation of the main table*/
-#links{
-  border-radius: 0 10px 10px 0;
+  width: 1000px;
 }
 
 table * {

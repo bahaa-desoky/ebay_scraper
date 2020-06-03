@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.contrib import messages
-from . import scraper_code
 import requests
 from bs4 import BeautifulSoup
 
