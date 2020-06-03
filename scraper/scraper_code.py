@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-nkw = input('Enter term: ').replace(' ', '+').replace("'", '%27')
+nkw = ''
 
 url = 'https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2380057.m570.l1313.TR8.TRC0.A0.H0.Xpokemon.TRS2&_nkw='+nkw+'&_sacat=0'
 page = requests.get(url)

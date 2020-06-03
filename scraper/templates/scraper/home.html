@@ -11,33 +11,75 @@
     <div class="wrap-table100">
     <div class="table100">
 
-    <table style="display: inline-block; float: left">
+    <form action="{% url 'scraper-home' %}" method="POST">
+	    	{% csrf_token %}
+
+	        <h3>Enter search item: </h3>
+            <input type="text" name="nkw" style="width: 1000px;height: 40px" placeholder="Insert the link">
+
+
+
+		    <button class="btn btn-success">Submit</button>&ensp;
+    </form>
+
+{#    <table style="display: inline-block; float: left">#}
         <tr>
             <th>Item Title</th>
             <th>Item Price </th>
             <th>Shipping Cost</th>
         </tr>
-        <!-- this for loop separates each set of title, price, etc.       -->
-        {% for item in items.main%}
-            <tr>
-                <!-- this for loop separates each each element (title, price, etc.) into a cell       -->
-                {% for data in item%}
-                <td>{{data|truncatechars:65}}</td>
-                {% endfor %}
-        {% endfor %}
-            </tr>
-    </table>
+{#        <!-- this for loop separates each set of title, price, etc.       -->#}
+{#        {% for item in items.main%}#}
+{#            <tr>#}
+{#                <!-- this for loop separates each each element (title, price, etc.) into a cell       -->#}
+{#                {% for data in item%}#}
+{#                <td>{{data|truncatechars:65}}</td>#}
+{#                {% endfor %}#}
+{#        {% endfor %}#}
+{#            </tr>#}
+{#    </table>#}
+{##}
+{#    <table id= "links" style="display: inline-block;">#}
+{#        <tr>#}
+{#            <th>Links</th>#}
+{#        </tr>#}
+{#        {% for links in items.links %}#}
+{#            <tr>#}
+{#                <!-- this for loop separates each each element (title, price, etc.) into a cell       -->#}
+{#                <td ><a href="{{links}}">{{links|truncatechars:30}}</a></td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
 
-    <table id= "links" style="display: inline-block;">
+    <table>
         <tr>
-            <th>Links</th>
+            <th>Item Title</th>
+            <th>Item Price </th>
+            <th>Shipping Cost</th>
+            <th>Link</th>
         </tr>
-        {% for links in items.links %}
-            <tr>
-                <!-- this for loop separates each each element (title, price, etc.) into a cell       -->
-                <td ><a href="{{links}}">{{links|truncatechars:30}}</a></td>
-            </tr>
-        {% endfor %}
+
+        <tr>
+        {% for item in items %}
+            <td>
+                {{item.0}}
+            </td>
+
+            <td>
+                {{item.1}}
+            </td>
+
+            <td>
+                {{item.2}}
+            </td>
+
+            <td>
+                <a href={{item.3}} target="_blank">click here</a>
+            </td>
+
+    <tr>
+    {% endfor %}
+
     </table>
 </body>
 </html>
