@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'scraper/table.css' %}">
-    <title>Scraper</title>
+    <title>Ebay Scraper</title>
 </head>
 <body>
     <div class="limiter">
@@ -22,10 +22,10 @@
     <table class="table">
         <tr>
             <th>Item Title</th>
-            <th>Item Price </th>
-            <th>Shipping Cost</th>
-            <th>Condition</th>
-{#            <th>Link</th>#}
+            <th>Condition </th>
+            <th>Item Price</th>
+            <th>Shipping</th>
+            <th>Total Price</th>
         </tr>
 
         <tr>
@@ -46,9 +46,9 @@
                 {{item.3}}
             </td>
 
-{#            <td>#}
-{#                <a target="_blank" href={{item.4}}>View item</a>#}
-{#            </td>#}
+            <td>
+                {{item.4}}
+            </td>
 
     <tr>
     {% endfor %}

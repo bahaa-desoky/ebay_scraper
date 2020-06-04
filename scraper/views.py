@@ -13,7 +13,9 @@ def home(request):
         item_price = []
         item_link = []
         item_shipping = []
+        item_shipping_calc = []
         item_condition = []
+        total_price = []
 
         nkw = request.POST['nkw']
         url = 'https://www.ebay.com/sch/' + nkw
@@ -44,13 +46,24 @@ def home(request):
         for listing in listings_shipping:
             text_only = listing.text
             no_plus = text_only.replace('+', '').replace('Shipping', '').replace('shipping', '')
+            no_symbols = text_only.replace('+', '').replace('Shipping', '').replace('shipping', '').\
+                replace('Free', '0').replace('International', '').replace(' ', '')
             item_shipping.append(no_plus)
+            item_shipping_calc.append(no_symbols)
 
         for listing in listings_condition:
             text_only = listing.text
             item_condition.append(text_only)
 
-        master_list = zip(item_title, item_price, item_shipping, item_condition, item_link)
+        for i1, i2 in zip(item_price, item_shipping_calc):
+            i1, i2 = i1.replace('$', ' '), i2.replace('$', ' ')
+            items = i1.split('-')
+            added_items = [str(round(float(item) + float(i2), 2)) for item in items]
+            total_price.append('-'.join(added_items))
+
+        total_price = ['$' + s for s in total_price]
+
+        master_list = zip(item_title, item_condition, item_price, item_shipping, total_price)
         super_list = [list(a) for a in master_list]
 
         context = {

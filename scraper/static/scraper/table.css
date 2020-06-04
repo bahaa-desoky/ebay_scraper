@@ -63,10 +63,21 @@ form input{
   color: black;
 }
 
-.link {
+a {
+  text-decoration: none;
+}
+
+a:link {
   color: dimgrey;
 }
 
+a:visited {
+  color: dimgrey;
+}
+
+a:hover {
+  color: #5f5f5f;
+}
 
 /*main table properties*/
 table {
