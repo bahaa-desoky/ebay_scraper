@@ -50,6 +50,7 @@ form input{
   border-radius: 10px;
   border: none;
   background-color: #7269b1;
+  outline: none;
   height: 35px;
   width: 100px;
   color: white;
@@ -61,6 +62,11 @@ form input{
   background-color: white;
   color: black;
 }
+
+.link {
+  color: dimgrey;
+}
+
 
 /*main table properties*/
 table {

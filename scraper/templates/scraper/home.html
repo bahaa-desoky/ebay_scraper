@@ -24,13 +24,14 @@
             <th>Item Title</th>
             <th>Item Price </th>
             <th>Shipping Cost</th>
-            <th>Link</th>
+            <th>Condition</th>
+{#            <th>Link</th>#}
         </tr>
 
         <tr>
         {% for item in items %}
             <td>
-                {{item.0}}
+                <a class="link" target="_blank" href={{item.4}}>{{item.0}}</a>
             </td>
 
             <td>
@@ -42,8 +43,12 @@
             </td>
 
             <td>
-                <a href={{item.3}} target="_blank">click here</a>
+                {{item.3}}
             </td>
+
+{#            <td>#}
+{#                <a target="_blank" href={{item.4}}>View item</a>#}
+{#            </td>#}
 
     <tr>
     {% endfor %}
